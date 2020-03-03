@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: match-cam1
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+  instance:
+    hostname: localhost

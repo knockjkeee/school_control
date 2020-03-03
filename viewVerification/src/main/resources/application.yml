@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: start-verification
+
+server:
+  port: 8008
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+  instance:
+    hostname: localhost
+
+#hystrix:
+#  command:
+#    start-verification:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 600000
+
+
+hystrix:
+  command:
+    start-verification:
+    execution:
+      isolation:
+        strategy: THREAD
+        thread:
+          timeoutInMilliseconds: 95000
+
+start-verification:
+  ribbon:
+    ConnectTimeout: 30000
+    ReadTimeout: 60000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100

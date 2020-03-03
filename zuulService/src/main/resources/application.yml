@@ -1,0 +1,134 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    start-service:
+      path: /view/**
+      url: http://localhost:8007
+      strip-prefix: true
+
+    ws-control:
+      path: /ws/**
+      url: http://localhost:8091
+      strip-prefix: true
+
+
+#    ws-control-connect:
+#      path: /wsconnect/**
+#      url: ws://localhost:8091/ws
+#      strip-prefix: true
+
+
+    ws-control-static:
+      path: /webjars/**
+      url: http://localhost:8091
+      strip-prefix: false
+
+    ws-control-static2:
+      path: /**
+      url: http://localhost:8091
+      strip-prefix: false
+
+    start-service2:
+      path: /api/view/**
+      url: http://localhost:8007
+      strip-prefix: false
+
+    start-static:
+      path: /static/img/**
+      url: http://localhost:8007
+      strip-prefix: false
+
+    verification:
+      path: /verification/**
+      serviceId: START-VERIFICATION
+      strip-prefix: true
+    verification-static:
+      path: /static/**
+      url: http://localhost:8008
+      strip-prefix: false
+    verification-csv:
+      path: /download/data.csv
+      url: http://localhost:8008
+      strip-prefix: false
+
+    outcontrol:
+      path: /outcontrol/**
+      serviceId: VIEW-OUTCONTROL
+      strip-prefix: true
+    outcontrol-static:
+      path: /static/**
+      url: http://localhost:8009
+      strip-prefix: false
+    outcontrol-csv:
+      path: /download/data.csv
+      url: http://localhost:8009
+      strip-prefix: false
+    #    verification-pageble:
+    #      path: /**
+    #      url: http://localhost:8008
+    #      strip-prefix: false
+    match-cam1:
+      path: /match/**
+      url: http://localhost:8082
+      strip-prefix: true
+#  ws:
+#    brokerages:
+#      ws-control:
+#        end-points: /ws
+#        brokers:  /topic
+#        destination-prefixes: /app
+  host:
+    connection-request-timeout-millis: 30000
+    connect-timeout-millis: 30000
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+  instance:
+    ip-address: 172.18.136.46
+    hostname: localhost
+
+server:
+  port: 80
+
+spring:
+  application:
+    name: zuul-service
+
+## Increase the Hystrix timeout to 60s (for all)
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 600000
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+
+ribbon:
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
+#
+#  zuul:
+#    host:
+#      so
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: THREAD
+#          thread:
+#            timeoutInMilliseconds: 10000

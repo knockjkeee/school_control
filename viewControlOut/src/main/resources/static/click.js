@@ -1,0 +1,1 @@
+$("#btn_loading").click().hide();
