@@ -4,6 +4,7 @@ Prototype of microservices for informing responsible persons about the attendanc
 The main emphasis was on the control of entry (assessment of the theft of access cards) and exit (absenteeism) of students in the educational institution.
 
 Data collection from ACS turnstiles (databases) and ISS (websocket) face recognition systems in real time with subsequent processing and structuring of information.
+<hr />
 
 ## Technologies used
 * Spring Boot 
@@ -14,16 +15,24 @@ Data collection from ACS turnstiles (databases) and ISS (websocket) face recogni
 * Flutter
 * Websocket with STOMP protocol and without STOMP protocol
 * Database PostgreSQL
+<hr />
 
-### Dashboard
+## Screen
+#### Dashboard
 ![Dashboard](1.jpg "Dashboard")
+<hr />
 
-### View page
+#### View page
 ![Start page](2.jpg "Start page")
+
+***
 
 ![Match page](3.jpg "Match page")
 
-![Out page](4.jpg "Out page")
+***
 
-### Security console
+![Out page](4.jpg "Out page")
+<hr />
+
+#### Security console
 ![Security console](5.jpg "Security console")
