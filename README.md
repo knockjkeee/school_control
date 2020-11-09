@@ -5,7 +5,7 @@ The main emphasis was on the control of entry (assessment of the theft of access
 
 Data collection from ACS turnstiles (databases) and ISS (websocket) face recognition systems in real time with subsequent processing and structuring of information.
 
-## Technologies used:
+## Technologies used
 * Spring Boot 
 * Spring MVC
 * Spring Data JPA
@@ -17,9 +17,13 @@ Data collection from ACS turnstiles (databases) and ISS (websocket) face recogni
 
 ### Dashboard
 ![Dashboard](1.jpg "Dashboard")
+
 ### View page
 ![Start page](2.jpg "Start page")
+
 ![Match page](3.jpg "Match page")
+
 ![Out page](4.jpg "Out page")
+
 ### Security console
 ![Security console](5.jpg "Security console")
